@@ -1,15 +1,42 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11055"/>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TimeWatchApp_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="153" alignment="left" text="00:00:00" textAlignment="center" id="j6J-op-S9s"/>
+                        <button width="1" alignment="left" title="Start" id="Q77-z7-FBO">
+                            <connections>
+                                <action selector="startTimer" destination="AgC-eL-Hgc" id="TBP-oK-7R9"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Reset" id="3ni-FT-Jaf">
+                            <connections>
+                                <action selector="resetTimer" destination="AgC-eL-Hgc" id="sOB-qb-xQM"/>
+                            </connections>
+                        </button>
+                        <button width="1" alignment="left" title="Setting" id="y1Q-wI-uHn">
+                            <connections>
+                                <action selector="openSetting" destination="AgC-eL-Hgc" id="UK6-7G-BV8"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="timerLabel" destination="j6J-op-S9s" id="24S-ef-7pM"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="88.923076923076934" y="126.84615384615385"/>
         </scene>
     </scenes>
 </document>
