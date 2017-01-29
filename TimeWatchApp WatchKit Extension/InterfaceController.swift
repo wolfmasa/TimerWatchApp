@@ -45,6 +45,9 @@ class InterfaceController: WKInterfaceController {
             targetDate = targetDate.addingTimeInterval(suspendedTime! - targetDate.timeIntervalSinceNow)
             suspendedTime = nil
         }
+        else{
+            targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * minDefault + secDefault + 1) )
+        }
         timerView.setDate(targetDate)
     }
     
