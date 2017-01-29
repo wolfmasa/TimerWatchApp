@@ -11,22 +11,20 @@ import Foundation
 
 
 class InterfaceController: WKInterfaceController {
-
-    var timer: Timer!
     
-    var hour: Int = 0
-    var min: Int = 10
-    var sec: Int = 0
+    @IBOutlet var timerView: WKInterfaceTimer!
     
     var hourDefault: Int = 0
     var minDefault: Int = 10
     var secDefault: Int = 0
+    var targetDate: Date = Date(timeIntervalSinceNow: TimeInterval(0))
+    var suspendedTime: TimeInterval? = nil
     
-    @IBOutlet var timerLabel: WKInterfaceLabel!
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
+        resetTimer()
     }
     
     override func willActivate() {
@@ -34,39 +32,31 @@ class InterfaceController: WKInterfaceController {
         super.willActivate()
     }
 
+    @IBAction func stopTimer() {
+        suspendedTime = targetDate.timeIntervalSinceNow
+        timerView.stop()
+    }
     
     @IBAction func startTimer() {
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
-        timer.fire()
-    }
 
+        timerView.start()
+        if(suspendedTime != nil){
+            //一時停止中なら、新しい時間を設定することで、一時停止を実現する
+            targetDate = targetDate.addingTimeInterval(suspendedTime! - targetDate.timeIntervalSinceNow)
+            suspendedTime = nil
+        }
+        timerView.setDate(targetDate)
+    }
+    
     @IBAction func resetTimer() {
-        hour = hourDefault
-        min = minDefault
-        sec = secDefault
+        
+        timerView.stop()
+        targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * minDefault + secDefault + 1) )
+        suspendedTime = nil
+        timerView.setDate(targetDate)
     }
 
     @IBAction func openSetting() {
-    }
-    
-    func updateView(){
-        timerLabel.setText("\(hour):\(min):\(sec)")
-    }
-    
-    func update(tm: Timer){
-        sec += 1
-        if sec >= 60 {
-            min += 1
-            sec = 0
-        }
-        if min >= 60{
-            hour += 1
-            min = 0
-        }
-        if hour >= 24{
-            // do nothing
-        }
-        updateView()
     }
     
     override func didDeactivate() {

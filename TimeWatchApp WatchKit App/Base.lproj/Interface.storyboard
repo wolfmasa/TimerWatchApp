@@ -14,11 +14,9 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TimeWatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="1" height="37" alignment="left" text="00:00:00" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="j6J-op-S9s">
-                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
-                        </label>
-                        <timer width="1" alignment="center" textAlignment="center" id="3a2-Hu-Xaw">
+                        <timer width="1" height="51" alignment="center" textAlignment="center" id="3a2-Hu-Xaw">
                             <fontDescription key="font" type="system" pointSize="27"/>
+                            <calendarUnit key="units" minute="YES" second="YES"/>
                         </timer>
                         <group width="1" alignment="left" id="g0L-M9-kIj">
                             <items>
@@ -36,7 +34,11 @@
                         </group>
                         <group width="1" alignment="left" id="NZZ-rt-p1z">
                             <items>
-                                <button width="0.5" alignment="left" title="Suspend" id="Ymt-bT-IpN"/>
+                                <button width="0.5" alignment="left" title="Suspend" id="Ymt-bT-IpN">
+                                    <connections>
+                                        <action selector="stopTimer" destination="AgC-eL-Hgc" id="sHJ-jY-tA8"/>
+                                    </connections>
+                                </button>
                                 <button width="0.5" alignment="left" title="Setting" id="y1Q-wI-uHn">
                                     <connections>
                                         <action selector="openSetting" destination="AgC-eL-Hgc" id="UK6-7G-BV8"/>
@@ -47,7 +49,7 @@
                         </group>
                     </items>
                     <connections>
-                        <outlet property="timerLabel" destination="j6J-op-S9s" id="24S-ef-7pM"/>
+                        <outlet property="timerView" destination="3a2-Hu-Xaw" id="qFn-8O-OZa"/>
                     </connections>
                 </controller>
             </objects>
