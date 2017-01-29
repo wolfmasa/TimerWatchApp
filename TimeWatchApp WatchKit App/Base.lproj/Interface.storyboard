@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16B2555" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
     <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,22 +14,37 @@
             <objects>
                 <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="TimeWatchApp_WatchKit_App" customModuleProvider="target">
                     <items>
-                        <label width="153" alignment="left" text="00:00:00" textAlignment="center" id="j6J-op-S9s"/>
-                        <button width="1" alignment="left" title="Start" id="Q77-z7-FBO">
-                            <connections>
-                                <action selector="startTimer" destination="AgC-eL-Hgc" id="TBP-oK-7R9"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Reset" id="3ni-FT-Jaf">
-                            <connections>
-                                <action selector="resetTimer" destination="AgC-eL-Hgc" id="sOB-qb-xQM"/>
-                            </connections>
-                        </button>
-                        <button width="1" alignment="left" title="Setting" id="y1Q-wI-uHn">
-                            <connections>
-                                <action selector="openSetting" destination="AgC-eL-Hgc" id="UK6-7G-BV8"/>
-                            </connections>
-                        </button>
+                        <label width="1" height="37" alignment="left" text="00:00:00" textAlignment="center" minimumScaleFactor="0.90000000000000002" id="j6J-op-S9s">
+                            <fontDescription key="font" style="UICTFontTextStyleBody"/>
+                        </label>
+                        <timer width="1" alignment="center" textAlignment="center" id="3a2-Hu-Xaw">
+                            <fontDescription key="font" type="system" pointSize="27"/>
+                        </timer>
+                        <group width="1" alignment="left" id="g0L-M9-kIj">
+                            <items>
+                                <button width="0.5" alignment="left" title="Start" id="Q77-z7-FBO">
+                                    <connections>
+                                        <action selector="startTimer" destination="AgC-eL-Hgc" id="TBP-oK-7R9"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Reset" id="3ni-FT-Jaf">
+                                    <connections>
+                                        <action selector="resetTimer" destination="AgC-eL-Hgc" id="sOB-qb-xQM"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="left" id="NZZ-rt-p1z">
+                            <items>
+                                <button width="0.5" alignment="left" title="Suspend" id="Ymt-bT-IpN"/>
+                                <button width="0.5" alignment="left" title="Setting" id="y1Q-wI-uHn">
+                                    <connections>
+                                        <action selector="openSetting" destination="AgC-eL-Hgc" id="UK6-7G-BV8"/>
+                                        <segue destination="hrT-8s-3Qo" kind="push" id="ghx-OD-AMx"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="timerLabel" destination="j6J-op-S9s" id="24S-ef-7pM"/>
@@ -37,6 +52,31 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="88.923076923076934" y="126.84615384615385"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="jgY-Hn-EWb">
+            <objects>
+                <controller id="hrT-8s-3Qo">
+                    <items>
+                        <group width="1" alignment="left" id="8Sr-Qt-lRn">
+                            <items>
+                                <label width="0.5" height="1" alignment="left" text="試合時間" id="Id4-gV-vtE"/>
+                                <label width="0.5" alignment="left" text="10分" textAlignment="right" id="vFW-fW-RSd"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="10" minimum="1" maximum="60" steps="1" id="l4b-XD-mzi"/>
+                        <switch width="1" alignment="left" value="YES" title="ハーフタイム" id="2Iu-F3-Dy8"/>
+                        <group width="1" alignment="left" id="NAd-yH-w6F">
+                            <items>
+                                <label width="0.5" alignment="left" text="休憩時間" id="13P-eo-y6n"/>
+                                <label width="0.5" alignment="left" text="0分" textAlignment="right" id="AXK-fy-DuV"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="5" minimum="1" maximum="60" steps="1" id="H2h-A7-FE3"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="308.61538461538464" y="122.48717948717949"/>
         </scene>
     </scenes>
 </document>
