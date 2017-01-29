@@ -14,9 +14,10 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet var timerView: WKInterfaceTimer!
     
-    var hourDefault: Int = 0
-    var minDefault: Int = 10
-    var secDefault: Int = 0
+    var gameMin: Int = 10
+    var gameSec: Int = 0
+    var restMin: Int = 0
+    var restSec: Int = 0
     var targetDate: Date = Date(timeIntervalSinceNow: TimeInterval(0))
     var suspendedTime: TimeInterval? = nil
     
@@ -46,7 +47,7 @@ class InterfaceController: WKInterfaceController {
             suspendedTime = nil
         }
         else{
-            targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * minDefault + secDefault + 1) )
+            targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * gameMin + gameSec + 1) )
         }
         timerView.setDate(targetDate)
     }
@@ -54,7 +55,7 @@ class InterfaceController: WKInterfaceController {
     @IBAction func resetTimer() {
         
         timerView.stop()
-        targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * minDefault + secDefault + 1) )
+        targetDate = Date(timeIntervalSinceNow: TimeInterval(60 * gameMin + gameSec + 1) )
         suspendedTime = nil
         timerView.setDate(targetDate)
     }
@@ -65,6 +66,10 @@ class InterfaceController: WKInterfaceController {
     override func didDeactivate() {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
+    }
+    
+    override func contextsForSegue(withIdentifier segueIdentifier: String) -> [Any]? {
+        return [gameMin, gameSec, restMin, restSec]
     }
 
 }

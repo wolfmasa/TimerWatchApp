@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="88.923076923076934" y="126.84615384615385"/>
         </scene>
-        <!--Interface Controller-->
+        <!--Timer Setting Interface Controller-->
         <scene sceneID="jgY-Hn-EWb">
             <objects>
-                <controller id="hrT-8s-3Qo">
+                <controller id="hrT-8s-3Qo" customClass="TimerSettingInterfaceController" customModule="TimeWatchApp_WatchKit_Extension">
                     <items>
                         <group width="1" alignment="left" id="8Sr-Qt-lRn">
                             <items>

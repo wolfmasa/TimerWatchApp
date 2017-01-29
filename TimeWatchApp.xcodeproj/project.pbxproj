@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD7392791E3E2A1200F0AD99 /* TimerSettingInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7392781E3E2A1200F0AD99 /* TimerSettingInterfaceController.swift */; };
 		DD83C3941E2A2EA7004EF1E9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83C3931E2A2EA7004EF1E9 /* AppDelegate.swift */; };
 		DD83C3961E2A2EA7004EF1E9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD83C3951E2A2EA7004EF1E9 /* ViewController.swift */; };
 		DD83C3991E2A2EA7004EF1E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD83C3971E2A2EA7004EF1E9 /* Main.storyboard */; };
@@ -80,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DD7392781E3E2A1200F0AD99 /* TimerSettingInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerSettingInterfaceController.swift; sourceTree = "<group>"; };
 		DD83C3901E2A2EA7004EF1E9 /* TimeWatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeWatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD83C3931E2A2EA7004EF1E9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD83C3951E2A2EA7004EF1E9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				DD83C3CE1E2A2EA7004EF1E9 /* ExtensionDelegate.swift */,
 				DD83C3D01E2A2EA8004EF1E9 /* Assets.xcassets */,
 				DD83C3D21E2A2EA8004EF1E9 /* Info.plist */,
+				DD7392781E3E2A1200F0AD99 /* TimerSettingInterfaceController.swift */,
 			);
 			path = "TimeWatchApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD7392791E3E2A1200F0AD99 /* TimerSettingInterfaceController.swift in Sources */,
 				DD83C3CF1E2A2EA7004EF1E9 /* ExtensionDelegate.swift in Sources */,
 				DD83C3CD1E2A2EA7004EF1E9 /* InterfaceController.swift in Sources */,
 			);
@@ -761,6 +765,7 @@
 				DD83C3D71E2A2EA8004EF1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD83C3D91E2A2EA8004EF1E9 /* Build configuration list for PBXNativeTarget "TimeWatchApp WatchKit App" */ = {
 			isa = XCConfigurationList;
@@ -769,6 +774,7 @@
 				DD83C3DB1E2A2EA8004EF1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD83C3DD1E2A2EA8004EF1E9 /* Build configuration list for PBXNativeTarget "TimeWatchApp" */ = {
 			isa = XCConfigurationList;
@@ -777,6 +783,7 @@
 				DD83C3DF1E2A2EA8004EF1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD83C3E01E2A2EA8004EF1E9 /* Build configuration list for PBXNativeTarget "TimeWatchAppTests" */ = {
 			isa = XCConfigurationList;
@@ -785,6 +792,7 @@
 				DD83C3E21E2A2EA8004EF1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD83C3E31E2A2EA8004EF1E9 /* Build configuration list for PBXNativeTarget "TimeWatchAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -793,6 +801,7 @@
 				DD83C3E51E2A2EA8004EF1E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
